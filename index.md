@@ -10,17 +10,11 @@ There should be whitespace between paragraphs.
 
 There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
 
-# Header 1
+# DaHofa
 
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
+This is DAHOFA
 
-## Header 2
-
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
-
-### Header 3
+## Programming
 
 ```js
 // Javascript code with syntax highlighting.
@@ -30,11 +24,45 @@ var fun = function lang(l) {
 }
 ```
 
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
+```java
+package xyz.dahofa.rotarycraft;
+
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.common.NeoForge;
+import xyz.dahofa.rotarycraft.api.lib.Names;
+import xyz.dahofa.rotarycraft.common.registry.RCArmorMaterials;
+import xyz.dahofa.rotarycraft.common.registry.RCBlocks;
+import xyz.dahofa.rotarycraft.common.registry.RCCreativeModeTab;
+import xyz.dahofa.rotarycraft.common.registry.RCItems;
+
+// The value here should match an entry in the META-INF/neoforge.mods.toml file
+@Mod(Names.MOD_ID)
+public class RotaryCraftRerotated {
+    // The constructor for the mod class is the first code that is run when your mod is loaded.
+    // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
+    public RotaryCraftRerotated(ModContainer container, IEventBus modBus) {
+        IEventBus forgeBus = NeoForge.EVENT_BUS;
+        registerAllDeferredRegistryObjects(modBus);
+    }
+
+    private void registerAllDeferredRegistryObjects(IEventBus modBus) {
+        RCItems.BLOCKS.register(modBus);
+        RCItems.ITEMS.register(modBus);
+        RCItems.TOOLS.register(modBus);
+        RCItems.ORES.register(modBus);
+        RCItems.ENCHANTED_TOOLS.register(modBus);
+
+        RCBlocks.BLOCKS.register(modBus);
+
+        RCArmorMaterials.ARMOR_MATERIALS.register(modBus);
+
+        RCCreativeModeTab.TABS.register(modBus);
+    }
+
+}
+
 ```
 
 #### Header 4
